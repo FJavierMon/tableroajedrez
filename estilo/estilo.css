@@ -1,0 +1,62 @@
+main{
+    width: 600px;
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+    'arriba arriba arriba arriba arriba arriba arriba arriba arriba arriba'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'izq centro centro centro centro centro centro centro centro der'
+    'abajo abajo abajo abajo abajo abajo abajo abajo abajo abajo'
+    ;
+    grid-template-columns: repeat(6, 100px); /*4 columnas del tablero + izq + der*/
+    grid-template-rows: repeat(6, 100px); /*4 columnas del tablero + izq + der*/
+}
+#arriba{
+    grid-area: arriba;
+}
+#izq{
+    grid-area: izq;
+}
+#centro{
+    grid-area: centro;
+    display: grid;
+    grid-template-columns: repeat(8, 100px); /*8 columnas del tablero*/
+    grid-template-rows: repeat(8, 100px); 
+    border: 1px solid black;
+}
+#der{
+    grid-area: der;
+}
+#abajo{
+    grid-area: abajo;
+}
+
+#arriba, #abajo{
+    display: flex;
+}
+
+.celda{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.celda img{
+    width: 70%;
+    object-fit: contain;
+}
+
+.negra{
+    background: black;
+}
+
+#arriba .celda h1, #der .celda h1{
+    transform: scale(-1, -1);
+}
